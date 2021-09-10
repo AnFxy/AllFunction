@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<com.hjq.bar.TitleBar
+          android:id="@+id/tool_bar"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:drawableSize="24dp"
+          app:leftTint="@color/white"
+          app:leftTitle="返回"
+          app:leftColor="@color/white"
+          app:rightIcon="@drawable/icn_list_app_bar"
+          android:background="@drawable/titlebar_bg"
+          app:barStyle="transparent"
+          app:title="首页"
+          app:titleColor="@color/black">
+
+      </com.hjq.bar.TitleBar>-->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.MainActivity"
+        android:orientation="vertical"
+        >
+
+        <com.hjq.bar.TitleBar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableSize="24dp"
+            app:backButton="false"
+            app:rightIcon="@drawable/icn_list_app_bar"
+            app:barStyle="transparent"
+            app:title="首页"
+            app:titleColor="@color/black">
+        </com.hjq.bar.TitleBar>
+
+        <FrameLayout
+            android:id="@+id/fl_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/white"></FrameLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nb_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff"
+            app:menu="@menu/menu_bottom_bar">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </LinearLayout>
+</layout>

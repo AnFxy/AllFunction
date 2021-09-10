@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="cn.com.fenrir.allfunction.model.bean.UserBean"></import>
+        <variable
+            name="userFormation"
+            type="UserBean" />
+    </data>
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <com.scwang.smart.refresh.header.MaterialHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/netDataHome"
+                android:text="@{userFormation.status}"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/netDataHome"
+                android:text="@{userFormation.message}"
+                app:layout_constraintTop_toBottomOf="@id/tv_status" />
+
+            <TextView
+                android:id="@+id/tv_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/netDataHome"
+                android:text="@{``+userFormation.user.id}"
+                app:layout_constraintTop_toBottomOf="@id/tv_message" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                style="@style/netDataHome"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:background="@drawable/edit_text_focused"
+                android:text="@{userFormation.user.name}"
+                app:layout_constraintTop_toBottomOf="@id/tv_id" />
+
+            <TextView
+                android:id="@+id/tv_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/netDataHome"
+                android:text="@{userFormation.user.mobile}"
+                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+            <TextView
+                android:id="@+id/tv_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/netDataHome"
+                android:text="@{userFormation.user.created_at}"
+                app:layout_constraintTop_toBottomOf="@id/tv_mobile" />
+
+            <TextView
+                android:id="@+id/tv_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/netDataHome"
+                android:text="@{userFormation.user.updated_at}"
+                app:layout_constraintTop_toBottomOf="@id/tv_create" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</layout>

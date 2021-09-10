@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#ffffff"
+        tools:context=".ui.activity.LoginActivity">
+
+        <TextView
+            android:id="@+id/text_back_loginactivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/icn_back_toolbar"
+            android:textColor="#ff00ff"
+            android:paddingLeft="12sp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textSize="16sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:text="账号登录"
+            android:typeface="monospace"
+            android:textColor="#333333"
+            android:paddingLeft="12sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="24sp"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/ll_count"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--账号图标-->
+                <ImageView
+                    style="@style/loginPassImage"
+                    android:src="@drawable/img_cha_history"/>
+                <TextView
+                    style="@style/loginPassText"
+                    android:text="账号" />
+
+                <EditText
+                    android:id="@+id/edit_count"
+                    style="@style/editText"
+                    android:hint="11位数字构成"
+                    android:background="@drawable/edit_text_selector"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_password"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ll_count">
+                <ImageView
+                    style="@style/loginPassImage"
+                    android:src="@drawable/img_char_update"/>
+                <TextView
+                    style="@style/loginPassText"
+                    android:text="密码"
+                    />
+                <EditText
+                    android:id="@+id/edit_password"
+                    android:hint="6-10位大小写字母、数字及*_@!"
+                    android:background="@drawable/edit_text_selector"
+                    android:inputType="textPassword"
+                    style="@style/editText"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_check_icon_count"
+                style="@style/loginPassCheckIcon"
+                app:layout_constraintTop_toTopOf="@id/ll_count"
+                app:layout_constraintBottom_toBottomOf="@id/ll_count"
+                app:layout_constraintRight_toRightOf="@id/ll_count"></ImageView>
+            <ImageView
+                android:id="@+id/iv_check_icon_password"
+                style="@style/loginPassCheckIcon"
+                app:layout_constraintTop_toTopOf="@id/ll_password"
+                app:layout_constraintBottom_toBottomOf="@id/ll_password"
+                app:layout_constraintRight_toRightOf="@id/ll_password"></ImageView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <TextView
+            android:id="@+id/text_nofunction_one"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="12sp"
+            android:text="用微信号/QQ号/邮箱登录"
+            android:textColor="#586b95"
+            android:textSize="15sp"
+            android:typeface="monospace" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="直接登录"
+                android:layout_marginLeft="12sp"
+                android:layout_marginRight="12sp"
+                android:background="@drawable/button_login_normal"
+                android:typeface="monospace"
+                android:textColor="#999999"
+                android:textSize="16sp"
+                android:enabled="false"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0sp"/>
+        <TextView
+            android:id="@+id/text_nofunction_two"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#ff00ff"
+            android:text="找回密码  |  紧急冻结  |  AnLxy安全中心"/>
+    </LinearLayout>
+</layout>

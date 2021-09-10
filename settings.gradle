@@ -1,0 +1,2 @@
+rootProject.name = "AllFunction"
+include ':app'
