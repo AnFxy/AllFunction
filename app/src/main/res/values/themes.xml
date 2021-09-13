@@ -89,4 +89,13 @@
         <item name="layout_constraintRight_toRightOf">parent</item>
         <item name="layout_constraintLeft_toLeftOf">parent</item>
     </style>
+
+    <style name="dataBaseHome">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
 </resources>

@@ -2,28 +2,54 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.graphics.Color"></import>
+        <import type="androidx.annotation.Dimension"></import>
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white">
         <RadioGroup
+            android:id="@+id/rg_person"
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent">
             <!--对学生用户进行增删改查-->
             <RadioButton
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:textStyle="bold"
-                android:textColor="#0000ff"
-                android:text="学生"
-                android:gravity="center"
-                android:textSize="18sp"
+                android:id="@+id/rbtn_student"
+                android:text="学生表"
+                android:textSize="@{position == 1 ? @dimen/sp_16 : @dimen/sp_15}"
+                android:textColor="@{position == 1 ? Color.BLUE : Color.GRAY}"
+                style="@style/dataBaseHome"
+                android:background="@drawable/button_border_frag_person"
                 />
             <!--对课程进行增删改查-->
+            <RadioButton
+                android:id="@+id/rbtn_course"
+                android:text="课程表"
+                android:textSize="@{position == 2 ? @dimen/sp_16 : @dimen/sp_15}"
+                android:textColor="@{position == 2 ? Color.BLUE : Color.GRAY}"
+                style="@style/dataBaseHome"
+                android:background="@drawable/button_border_frag_person"/>
             <!--对选课表进行增删改查-->
+            <RadioButton
+                android:id="@+id/rbtn_stu_course"
+                android:text="学生选课表"
+                android:textSize="@{position == 3 ? @dimen/sp_16 : @dimen/sp_15}"
+                android:textColor="@{position == 3 ? Color.BLUE : Color.GRAY}"
+                style="@style/dataBaseHome"
+                android:background="@drawable/button_border_frag_person"/>
         </RadioGroup>
+        <FrameLayout
+            android:id="@+id/fl_person"
+            app:layout_constraintTop_toBottomOf="@id/rg_person"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/split_line" />
+
+            <!--查询学生，直接点击按钮就是查询全部的学生，输入一个学生的名字就是查询这一个学生-->
+            <!--查询课程，直接点击按钮就是查询全部的课程，输入一个课程的名字就是查询这一个课程-->
+            <!--查询选课情况，直接点击按钮就是查询全部的选课情况，输入一个课程的名字或者学生名字就是查询这一个课程选的全部学生以及学生选的全部课程-->
+            <LinearLayout
+                android:id="@+id/ll_select"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_one"
+                    style="@style/editText"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/edit_text_selector"
+                    tools:hint="输入条件one" />
+
+                <EditText
+                    android:id="@+id/edit_two"
+                    style="@style/editText"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/edit_text_selector"
+                    android:hint="输入条件two" />
+
+                <Button
+                    android:id="@+id/btn_select"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_login_selector"
+                    android:gravity="center"
+                    android:text="查询"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_select"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/img_data_null" />
+
+            <ImageView
+                android:id="@+id/iv_hide_tip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/icon_triangle"
+                android:layout_gravity="center"
+                android:layout_marginTop="-10dp" />
+
+            <include layout="@layout/split_line" />
+
+            <!--添加学生，添加课程，添加选课记录-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edit_add_id"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_id" />
+
+                    <EditText
+                        android:id="@+id/edit_add_count"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_count" />
+
+                    <EditText
+                        android:id="@+id/edit_add_password"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_password" />
+
+                    <EditText
+                        android:id="@+id/edit_add_name"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_name" />
+
+                    <EditText
+                        android:id="@+id/edit_add_fakename"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_fakename" />
+
+                    <EditText
+                        android:id="@+id/edit_add_sex"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_sex" />
+
+                    <EditText
+                        android:id="@+id/edit_add_age"
+                        style="@style/editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/edit_text_selector"
+                        android:hint="user_age" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_login_selector"
+                    android:gravity="center"
+                    android:text="添加"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_hide_add_tip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/icon_triangle"
+                android:layout_gravity="center"/>
+
+            <include layout="@layout/split_line" />
+
+            <!--删除学生操作-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <EditText
+                    android:id="@+id/edit_delete_student"
+                    style="@style/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/edit_text_selector"
+                    android:hint="user_name"
+                    android:layout_gravity="center|left"/>
+                <Button
+                    android:id="@+id/btn_delete"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_login_selector"
+                    android:gravity="center"
+                    android:text="删除"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

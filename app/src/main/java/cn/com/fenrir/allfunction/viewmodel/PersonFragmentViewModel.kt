@@ -20,25 +20,25 @@ import io.reactivex.schedulers.Schedulers
  */
 class PersonFragmentViewModel : ViewModel(){
 
-    val liveData = MutableLiveData<Flowable<List<String>>>()
-    val dao = MySqliteDatabase.getDatabase(ContextAll.getContext()).useDao()
-
-    fun getDataFromDatabase(context: Context){
-      liveData.value  =  dao
-            .getAllDataFromUserTable()
-            .flatMap {
-                val list = mutableListOf<String>()
-                for (i in it) {
-                    list.add(i.fakeName)
-                }
-                Flowable.fromArray(list)
-            }
-          .compose(RxThreadUtils.flowableToMain())
-    }
-
-    fun insertData(userTable: UserTable){
-        dao.insert(userTable)
-            .compose(RxThreadUtils.completeToMain())
-            .subscribe()
-    }
+//    val liveData = MutableLiveData<Flowable<List<String>>>()
+//    val dao = MySqliteDatabase.getDatabase(ContextAll.getContext()).useDao()
+//
+//    fun getDataFromDatabase(context: Context){
+//      liveData.value  =  dao
+//            .getAllDataFromUserTable()
+//            .flatMap {
+//                val list = mutableListOf<String>()
+//                for (i in it) {
+//                    list.add(i.fakeName)
+//                }
+//                Flowable.fromArray(list)
+//            }
+//          .compose(RxThreadUtils.flowableToMain())
+//    }
+//
+//    fun insertData(userTable: UserTable){
+//        dao.insert(userTable)
+//            .compose(RxThreadUtils.completeToMain())
+//            .subscribe()
+//    }
 }
