@@ -25,6 +25,9 @@ interface UserDao{
     @Delete
     fun delete(user: UserTable): Completable
 
+    @Query("DELETE FROM user_table WHERE user_name=:str")
+    fun deleteWithName(str: String): Completable
+
     @Update
     fun update(user: UserTable): Completable
 
@@ -32,5 +35,5 @@ interface UserDao{
     fun getAllDataFromUserTable(): Flowable<List<UserTable>>
 
     @Query("SELECT * FROM user_table WHERE user_name =:userName")
-    fun getSingleData(userName: String): Flowable<UserTable>
+    fun getSingleData(userName: String): Flowable<List<UserTable>>
 }

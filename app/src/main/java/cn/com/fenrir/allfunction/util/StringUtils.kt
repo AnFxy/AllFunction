@@ -1,5 +1,8 @@
 package cn.com.fenrir.allfunction.util
 
+import android.text.Editable
+import android.widget.EditText
+
 /**
  * 课题号（GORASA-XXXX)
  * 类或接口的描述信息
@@ -25,5 +28,11 @@ object StringUtils {
         return tag
     }
 
+    //获取Edittext的文本内容
+    fun getTextContent(edit: EditText): String = edit.text.toString()
 
+    //设置EditText为空
+    fun setTextContent(edit: EditText) {
+        edit.text = Editable.Factory.getInstance().newEditable("")
+    }
 }
